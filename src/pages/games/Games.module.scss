@@ -1,0 +1,46 @@
+.wrapper{
+    display: grid;
+    justify-self: center;
+    padding: 2%;
+}
+
+.content{
+    justify-self: center;
+}
+
+.host{
+
+}
+
+.games{
+    margin-top: 8%;
+    .games-grid{
+        display: grid;
+        border: 1px solid gray;
+        .row{
+            span{
+                padding: 12px
+            }
+        }
+    }
+}
+
+.no-user{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    h2{
+        a{
+            color: pink;
+            text-decoration: underline;
+        }
+    }
+}
+
+.game-wrapper{
+    padding: 2%;
+    display: grid;
+    place-items: center;
+}

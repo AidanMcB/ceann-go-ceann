@@ -1,0 +1,19 @@
+@import '../styles/colors.scss';
+
+.navbar{
+    width: 100%;
+    // background-color: cadetblue;
+    background-color: $blue-accent;
+    height: 4%;
+    color: rgb(249, 182, 14);
+    color: white;
+    display: flex;
+    align-items: center;
+    a{
+        margin-left: 2%;
+    }
+    .user{
+        margin-left: auto;
+        margin-right: 8px
+    }
+}

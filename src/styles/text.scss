@@ -2,3 +2,39 @@
     font-size: 1.2em;
     // font-family: 'Courier New', Courier, monospace;
 }
+
+.status-circle{
+    height: 16px;
+    width: 16px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  
+    &.ready{
+        background-color: greenyellow;
+    }
+    &.waiting{
+        background-color: yellow;
+    }
+    &.dropped{
+        background-color: red;
+    }
+
+}
+
+.ready-up-btn{
+    font-size: .6em;
+    border: 1px solid yellow;
+    border-radius: 25px;
+    padding: 2px;
+    background-color: yellow;
+    color: black;
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        background-color: yellowgreen;
+        border-color: yellowgreen;
+    }
+
+}

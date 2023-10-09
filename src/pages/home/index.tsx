@@ -1,15 +1,31 @@
+import { _createUser, _getUsers } from '@/services/user.service';
 import styles from './Home.module.scss';
+import UserContext from '@/contexts/user-context';
+
+// React / Nextjs
 import React from 'react';
+import { useRouter } from 'next/router'
+import { setLocalStorage } from '@/utils/hooks';
 
 function Home() {
-
+    const router = useRouter();
+    const { activeUser, setActiveUser } = React.useContext(UserContext);
     const [username, setUsername] = React.useState<string>('');
     const [errorMessage, setError] = React.useState<string>('');
 
-    function submitUser(): void {
+    async function submitUser(): Promise<void> {
+        setLocalStorage('loggedInUser', '');
+        setError('');
+
         if(username.length > 0){
-            setError('');
-            // submit logic
+            const user = await _createUser(username);
+            if(user && user !== undefined){
+                setLocalStorage('loggedInUser', user);
+                setActiveUser(user);
+                router.push('/lobby');
+            }else{
+                setError('There was problem logging in');
+            }
         }else{
             setError('Please enter a username')
         }
